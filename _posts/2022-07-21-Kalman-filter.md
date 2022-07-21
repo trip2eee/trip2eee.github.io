@@ -16,21 +16,21 @@ comments: true
 ## Bayes filter
 State space equation
 
-$$x(k+1) = f(x(k), u(k), w(k), k)$$
+\begin{align} x(k+1) = f(x(k), u(k), w(k), k) \end{align}
 
 Measurement model 
 
-$$\begin{equation*}z(k) = h(x(k), v(k), k)\end{equation*}$$
+\begin{align} z(k) = h(x(k), v(k), k) \end{align}
 
 Markov assumption
 
-$$\begin{align} p(x(k) | x(k-1), x(k-2), ..., x(0), Z_{k-1}, U_{k-1}) = p(x(k) | x(k-1), u(k-1)) \end{align}$$
+\begin{align} p(x(k) \mid x(k-1), x(k-2), ..., x(0), Z_{k-1}, U_{k-1}) = p(x(k) \mid x(k-1), u(k-1)) \label{markov_assumption1} \end{align}
 
-$$\begin{align} p(z(k)|x(k), Z_{k-1}, U_{k-1}) = p(z(k) | x(k)) \end{align}$$
+\begin{align} p(z(k) \mid x(k), Z_{k-1}, U_{k-1}) = p(z(k) \mid x(k)) \label{markov_assumption2}  \end{align}
 
-Bayes filter estimates conditional probability $p(x(k)|Z_k, U_{k-1})$ using equation 3 and 4.
+Bayes filter estimates conditional probability $p(x(k) \mid Z_k, U_{k-1})$ using equation $\ref{markov_assumption1}$ and $\ref{markov_assumption2}$.
 
-$$\begin{align} p(x(k)|Z_k, U_{k-1}) = \frac{p(Z_k|x(k), U_{k-1}) p(x(k)|U_{k-1})}{p(Z_k|U_{k-1})} \end{align}$$
+\begin{align} p(x(k) \mid Z_k, U_{k-1}) = \frac{p(Z_k \mid x(k), U_{k-1}) p(x(k) \mid U_{k-1})}{p(Z_k \mid U_{k-1})} \end{align}
 
 
 
