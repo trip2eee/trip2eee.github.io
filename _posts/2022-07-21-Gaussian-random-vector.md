@@ -28,7 +28,7 @@ Then the conditional pdf of $X$ can be given as follows
 
 where $n$ and $p$ are dimensions of $z$ and $z$.
 
-Then the inverse of Eq. $\ref{eq_pyy}$ can also be expressed in the matrix form.
+Then the inverse of Eq.$\ref{eq_pyy}$ can also be expressed in the matrix form.
 
 \begin{align} P_{yy}^{-1} = \begin{bmatrix} D^{-1} & -D^{-1} P_{xz} P_{zz}^{-1} \\\\ -P_{zz}^{-1}P_{zx}D^{-1} & P_{zz}^{-1}+P_{zz}^{-1}P_{zx}D^{-1}P_{xz}P_{zz}^{-1} \end{bmatrix} \end{align}
 
@@ -36,7 +36,7 @@ where
 
 \begin{align}D = P_{xx} - P_{xz}P_{zz}^{-1}P_{zx} \end{align}
 
-The equation in $\\{ \cdot \\}$ of Eq. $\ref{eq_pxz}$ can be simplified.
+The equation in $\\{ \cdot \\}$ of Eq.$\ref{eq_pxz}$ can be simplified.
 
 $ (y - \mu_y)^T P_{yy}^{-1} (y - \mu_y) - (z - \mu_z)^T P_{zz}^{-1} (z - \mu_z) $
 

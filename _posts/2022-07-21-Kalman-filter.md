@@ -30,10 +30,10 @@ Markov assumption
 \begin{align} p(z(k) \mid x(k), Z_{k-1}, U_{k-1}) = p(z(k) \mid x(k)) \label{eq_meas_model} \end{align}
 
 
-$\ref{eq_system_model}$ is the pdf of state transition based on the previous state and the previous input. $\ref{eq_meas_model}$ is the pdf of measurements for the current state.
+Eq.$\ref{eq_system_model}$ is the pdf of state transition based on the previous state and the previous input. Eq.$\ref{eq_meas_model}$ is the pdf of measurements for the current state.
 
 
-Bayes filter estimates conditional probability $p(x(k) \mid Z_k, U_{k-1})$ using equation $\ref{eq_system_model}$ and $\ref{eq_meas_model}$.
+Bayes filter estimates conditional probability $p(x(k) \mid Z_k, U_{k-1})$ using Eq.$\ref{eq_system_model}$ and Eq.$\ref{eq_meas_model}$.
 
 \begin{align} p(x(k) \mid Z_k, U_{k-1}) = \frac{p(Z_k \mid x(k), U_{k-1}) p(x(k) \mid U_{k-1})}{p(Z_k \mid U_{k-1})} \end{align}
 
@@ -41,11 +41,11 @@ Bayes filter estimates conditional probability $p(x(k) \mid Z_k, U_{k-1})$ using
 
 \begin{align} =\frac{p(z(k) \mid Z_{k-1}, x(k), U_{k-1}) p(Z_{k-1} \mid x(k), U_{k-1}) p(x(k) \mid U_{k-1})}{p(z(k) \mid Z_{k-1}, U_{k-1}) p(Z_{k-1} \mid U_{k-1})} \label{eq_interim1} \end{align}
 
-$p(Z_{k-1} \mid x(k), U_{k-1})$ in $\ref{eq_interim1}$ can be computed as
+$p(Z_{k-1} \mid x(k), U_{k-1})$ in Eq.$\ref{eq_interim1}$ can be computed as
 
 \begin{align} p(Z_{k-1} \mid x(k), U_{k-1}) = \frac{ p(x(k) \mid Z_{k-1}, U_{k-1}) p(Z_{k-1} \mid U_{k-1}) } {p(x(k) \mid U_{k-1})} \label{eq_interim2} \end{align}
 
-If we replace $p(Z_{k-1} \mid x(k), U_{k-1})$ in $\ref{eq_interim1}$ with $\ref{eq_interim2}$,
+If we replace $p(Z_{k-1} \mid x(k), U_{k-1})$ in Eq.$\ref{eq_interim1}$ with Eq.$\ref{eq_interim2}$,
 
 \begin{align} p(x(k) \mid Z_k, U_{k-1}) = \frac{ p(z(k) \mid Z_{k-1}, x(k), U_{k-1}) p(x(k) \mid U_{k-1}) \cdot p(Z_{k-1} \mid x(k), U_{k-1})}{ p(z(k) \mid Z_{k-1}, U_{k-1}) p(Z_{k-1} \mid U_{k-1}) } \end{align}
 
@@ -54,11 +54,11 @@ If we replace $p(Z_{k-1} \mid x(k), U_{k-1})$ in $\ref{eq_interim1}$ with $\ref{
 
 \begin{align} = \frac{ p(z(k) \mid x(k), Z_{k-1}, U_{k-1}) \cdot p(x(k) \mid Z_{k-1}, U_{k-1}) }{ p(z(k) \mid Z_{k-1}, U_{k-1})} \label{eq_interim3} \end{align}
 
-By applying measurement model $\ref{eq_meas_model}$, $\ref{eq_interim3}$ becomes
+By applying measurement model Eq.$\ref{eq_meas_model}$, Eq.$\ref{eq_interim3}$ becomes
 
 \begin{align} p(x(k) \mid Z_k, U_{k-1}) = \frac{ p(z(k) \mid x(k)) p(x(k) \mid Z_{k-1}, U_{k-1}) } {p(z(k) \mid Z_{k-1}, U_{k-1})} \label{eq_interim4} \end{align}
 
-Description of pdfs in $\ref{eq_interim4}$ are as follows: 
+Description of pdfs in Eq.$\ref{eq_interim4}$ are as follows: 
 
 * $p(x(k) \mid Z_{k-1}, U_{k-1})$ a priori pdf because it's obtained before measuring $z(k)$.
 * $p(x(k) \mid Z_k, U_{k-1})$ : a posteriori pdf because it's obtained after measuring $z(k)$.
@@ -67,19 +67,19 @@ Description of pdfs in $\ref{eq_interim4}$ are as follows:
 
 \begin{align} p(x(k) \mid Z_{k-1}, U_{k-1}) = \int_{x(k)} {p(z(k) \mid x(k)) p(x(k) \mid Z_{k-1}, U_{k-1}) dx(k)} \label{eq_norm_func}\end{align}
 
-If we apply $\ref{eq_norm_func}$ to $\ref{eq_interim4}$, 
+If we apply Eq.$\ref{eq_norm_func}$ to Eq.$\ref{eq_interim4}$, 
 
 \begin{align} p(x(k) \mid Z_k, U_{k-1}) = \frac{ p(z(k) \mid x(k)) p(x(k) \mid Z_{k-1}, U_{k-1}) }{ \int_{x(k)} {p(z(k) \mid x(k)) p(x(k) \mid Z_{k-1}, U_{k-1}) dx(k)} } \label{eq_meas_update} \end{align}
 
-$\ref{eq_meas_update}$ is measurement update.
+Eq.$\ref{eq_meas_update}$ is measurement update.
 
-If we expand $p(x(k) \mid Z_{k-1}, U_{k-1})$ in $\ref{eq_meas_update}$, 
+If we expand $p(x(k) \mid Z_{k-1}, U_{k-1})$ in Eq.$\ref{eq_meas_update}$, 
 
 \begin{align} p(x(k) \mid Z_{k-1}, U_{k-1}) = \int_{x(k-1)} p(x(k) \mid x(k-1), Z_{k-1}, U_{k-1}) p(x(k-1) \mid Z_{k-1}, U_{k-1}) dx(k-1) \end{align}
 
 \begin{align} = \int_{x(k-1)} p(x(k) \mid x(k-1), u(k-1)) p(x(k-1) \mid Z_{k-1}, U_{k-2}) dx(k-1) \label{eq_time_update} \end{align}
 
-$\ref{eq_time_update}$ is time update (prediction).
+Eq.$\ref{eq_time_update}$ is time update (prediction).
 
 ## Kalman filter model
 
@@ -103,11 +103,11 @@ The mean value of measurement vector is compuated as
 
 \begin{align} = H(k) E\left[ x(k) \right] \label{eq_kf_meas} \end{align}
 
-Let state error $\tilde{x}(k) = x(k) - E\left[ x(k) \right] $. Then error propagation is obtained by Eq. $\ref{eq_kf_pred_model1}$, $\ref{eq_kf_meas_model1}$ and $\ref{eq_kf_pred_model2}$ as follows
+Let state error $\tilde{x}(k) = x(k) - E\left[ x(k) \right] $. Then error propagation is obtained by Eq.$\ref{eq_kf_pred_model1}$, Eq.$\ref{eq_kf_meas_model1}$ and Eq.$\ref{eq_kf_pred_model2}$ as follows
 
 \begin{align} \tilde{x}(k + 1) = F(x)\tilde{x}(k) + G_w(k)w(k) \label{ep_kf_error_prop}\end{align}
 
-From $\ref{ep_kf_error_prop}$ error covariance becomes
+From Eq.$\ref{ep_kf_error_prop}$ error covariance becomes
 
 \begin{align} P(k+1) = E\left[ \tilde{x}(k+1) \tilde{x}^T(k+1) \right] \end{align}
 
@@ -115,7 +115,7 @@ From $\ref{ep_kf_error_prop}$ error covariance becomes
 
 \begin{align} = F(k)P(k)F^T(k) + G_w(k)Q(k)G^T_w(k) \end{align}
 
-Let meazurement error $\tilde{z} = z(k) - E\left[ z(k) \right]$. Then from $\ref{eq_kf_meas_model1}$, $\ref{eq_kf_meas}$ the error covariance of measurement vector becoms
+Let meazurement error $\tilde{z} = z(k) - E\left[ z(k) \right]$. Then from Eq.$\ref{eq_kf_meas_model1}$, Eq.$\ref{eq_kf_meas}$ the error covariance of measurement vector becoms
 
 \begin{align} P_{zz}(k) = E\left[ \tilde{z}(k) \tilde{z}^T(k) \right] \end{align}
 
@@ -142,36 +142,36 @@ $x(k)$ and $z(k)$ are jointly Gaussian. Therefore,
 
 where
 
-\begin{align} \hat{x}(k \mid k) = E\left[x(k) \mid Z_k \right] \end{align}
+$\hat{x}(k \mid k) = E\left[x(k) \mid Z_k \right]$
 
-\begin{align} P(k \mid k) = E\left[\left(x(k) - \hat{x}(k \mid k)\right) \left(x(k) - \hat{x}(k \mid k)\right) \mid Z_k\right] \end{align}
+$P(k \mid k) = E\left[\left(x(k) - \hat{x}(k \mid k)\right) \left(x(k) - \hat{x}(k \mid k)\right) \mid Z_k\right]$
 
-\begin{align} \hat{x}(k \mid k-1) = E\left[x(k) \mid Z_{k-1} \right] \end{align}
+$\hat{x}(k \mid k-1) = E\left[x(k) \mid Z_{k-1} \right]$
 
-\begin{align} P(k \mid k-1) = E\left[\left(x(k) - \hat{x}(k \mid k-1)\right) \left(x(k) - \hat{x}(k \mid k-1)\right) \mid Z_{k-1}\right] \end{align}
+$P(k \mid k-1) = E\left[\left(x(k) - \hat{x}(k \mid k-1)\right) \left(x(k) - \hat{x}(k \mid k-1)\right) \mid Z_{k-1}\right]$
 
 
 \begin{align} p(x(k), z(k) \mid Z_{k-1}) = N\left( \begin{bmatrix}x(k) \\\\ z(k)\end{bmatrix} \mid \begin{bmatrix} \hat{x}(k \mid k-1) \\\\ \hat{z}(k \mid k-1)\end{bmatrix}, \begin{bmatrix} P(k \mid k-1) & P_{xz}(k \mid k-1) \\\\ P^T_{xz}(k \mid k-1) & P_{zz}(k \mid k-1) \end{bmatrix}  \right)\end{align}
 
-By using $\ref{eq_kf_meas}$ measurement prediction $\hat{z}(k \mid k-1)$ can be computed as follows
+By using Eq.$\ref{eq_kf_meas}$ measurement prediction $\hat{z}(k \mid k-1)$ can be computed as follows
 \begin{align} \hat{z}(k \mid k-1) = E\left[z(k) \mid Z_{k-1}\right] = E\left[H(k)x(k) + v(k) \mid Z_{k-1} \right] = H(k) \hat x(k \mid {k-1})\end{align}
 
-Let measurement residual (innovation) $\tilde{z}(k \mid k-1) = z(k) - \hat{z}(k \mid k-1)$. Then from Eq. $\ref{eq_kf_pzz}$, measurement error covariance $P_{zz}(k \mid k-1)$ becomes
+Let measurement residual (innovation) $\tilde{z}(k \mid k-1) = z(k) - \hat{z}(k \mid k-1)$. Then from Eq.$\ref{eq_kf_pzz}$, measurement error covariance $P_{zz}(k \mid k-1)$ becomes
 
 \begin{align} P_{zz}(k \mid k-1) = E\left[ \tilde{z}(k \mid k-1) \tilde{z}^T(k \mid k-1) \mid Z_{k-1} \right] = H(k)P(k \mid k-1)H^T(k) + R(k) \end{align}
 
-If we define prediction error $\tilde{x}(k \mid k - 1) = x(k) - \hat{x}(k \mid k - 1)$, $P_{xz}(k \mid k-1)$ becomes as follows Eq. $\ref{eq_kf_pxz}$
+If we define prediction error $\tilde{x}(k \mid k - 1) = x(k) - \hat{x}(k \mid k - 1)$, $P_{xz}(k \mid k-1)$ becomes as follows Eq.$\ref{eq_kf_pxz}$
 
 \begin{align} P_{xz}(k \mid k-1) = E\left[ \tilde{x}(k \mid k-1) \tilde{z}^T(k \mid k-1) \mid Z_{k-1} \right] = P(k \mid k-1)H^T(k) \end{align}
 
-From $\ref{eq_interim4}$, 
+From Eq.$\ref{eq_interim4}$, 
 
 \begin{align} p(x(k) \mid Z_k) = p(x(k) \mid z(k), Z_{k-1}) = N\left(x(k) \mid \hat{x}(k \mid k), P(k \mid k) \right) \end{align}
 
 
 ### Measurement Update
 
-By the Eq. 8 and Eq. 9 in [Gaussian random vector](Gaussian-random-vector.html), the expectations of the following pdfs are obtained.
+By the Eq.8 and Eq.9 in [Gaussian random vector](Gaussian-random-vector.html), the expectations of the following pdfs are obtained.
 
 \begin{align} \hat{x}(k \mid k) \equiv E\left[ x(k) \mid z(k), Z_{k-1}\right] = E\left[ x(k) \mid Z_k \right] \end{align}
 
@@ -181,12 +181,14 @@ By the Eq. 8 and Eq. 9 in [Gaussian random vector](Gaussian-random-vector.html),
 
 \begin{align} P(k \mid k) = E\left[ \tilde{x}(k \mid k-1) \tilde{x}^T(k \mid k-1) \mid Z_{k-1} \right] - P_{xz}(k \mid k-1) P_{zz}^{-1} (k \mid k-1)P^T_{xz}(k \mid k-1)\end{align}
 
-\begin{align} = P(k \mid k-1) - P_{xz}(k \mid k-1) P_{zz}^{-1} (k \mid k-1) P_{xz}^T(k \mid k-1) = \left(I - K(k)H(k)\right)P(k \mid k-1) \end{align}
+\begin{align} = P(k \mid k-1) - P_{xz}(k \mid k-1) P_{zz}^{-1} (k \mid k-1) P_{xz}^T(k \mid k-1) \end{align}
+\begin{align} = \left(I - K(k)H(k)\right)P(k \mid k-1) \end{align}
 
 
 where Kalman gain $K(k)$ is as follows
 
-\begin{align} K(k) = P_{xz}(k \mid k - 1) P^{-1}_{zz}(k \mid k-1) = P(k \mid k-1)H^T(k) \left( H(k)P(k \mid k-1)H^T(k) + R(k)\right)^{-1} \end{align}
+\begin{align} K(k) = P_{xz}(k \mid k - 1) P^{-1}_{zz}(k \mid k-1) \end{align}
+\begin{align} = P(k \mid k-1)H^T(k) \left( H(k)P(k \mid k-1)H^T(k) + R(k)\right)^{-1} \end{align}
 
 ### Time Update
 \begin{align} p(x(k+1) \mid Z_k) = N(x(k+1) \mid \hat{x}(k+1 \mid k), P(k+1 \mid k)) \end{align}
