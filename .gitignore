@@ -10,3 +10,6 @@ _site
 # Bundler
 .bundle/
 vendor/
+
+run_server.bat
+

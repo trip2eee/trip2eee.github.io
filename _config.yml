@@ -10,7 +10,7 @@ exclude:
 
 # Site settings
 title: Scratch Pad
-subtitle: "computer vision, mathematics, etc"
+subtitle: "Computer vision, mathematics, etc"
 email: trip2eee@gmail.com
 name: Jongmin Park
 description: >
@@ -35,6 +35,7 @@ pagination:
   per_page: 5
   permalink: "/page/:num/"
   sort_reverse: true
+  
 
 # Archive settings (see https://github.com/jekyll/jekyll-archives/)
 jekyll-archives:
