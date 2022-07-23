@@ -125,7 +125,7 @@ Let meazurement error $\tilde{z} = z(k) - E\left[ z(k) \right]$. Then from Eq.$\
 
 Covariance between $x(k)$ and $z(k)$ is as follows
 
-\begin{align} P_{xz}(k) = E\left[ \tilde{x}(k) \tilde{z}^T(k) \right] = E\left[ \tilde{x}(k) \left(H(k) \tilde{x}^T(k) + v(k)\right)^T \right] \end{align}
+\begin{align} P_{xz}(k) = E\left[ \tilde{x}(k) \tilde{z}^T(k) \right] = E\left[ \tilde{x}(k) \left(H(k) \tilde{x}(k) + v(k)\right)^T \right] \end{align}
 
 \begin{align} = E\left[ \tilde{x}(k)\tilde{x}^T(k) \right] H^T(k) + E\left[ \tilde{x}(k) v^T(k) \right] = P(k)H^T(k) \label{eq_kf_pxz} \end{align}
 
