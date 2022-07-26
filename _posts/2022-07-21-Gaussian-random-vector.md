@@ -38,26 +38,26 @@ where
 
 The equation in $\\{ \cdot \\}$ of Eq.$\ref{eq_pxz}$ can be simplified.
 
-$ (y - \mu_y)^T P_{yy}^{-1} (y - \mu_y) - (z - \mu_z)^T P_{zz}^{-1} (z - \mu_z) $
+$ (y - \mu_y)^T P_{YY}^{-1} (y - \mu_y) - (z - \mu_z)^T P_{ZZ}^{-1} (z - \mu_z) $
 
-$ = (x - \mu_x)^T D^{-1} (x - \mu_x) - (x - \mu_x)^T D^{-1}P_{xz}P_{zz}^{-1} (z - \mu_z) - (z - \mu_z)^T P_{zz}^{-1}P_{zx}D^{-1}(x - \mu_x) $
+$ = (x - \mu_x)^T D^{-1} (x - \mu_x) - (x - \mu_x)^T D^{-1}P_{XZ}P_{ZZ}^{-1} (z - \mu_z) - (z - \mu_z)^T P_{ZZ}^{-1}P_{ZX}D^{-1}(x - \mu_x) $
 
-$ + (z-\mu_z)^T\left(P_{zz}^{-1} + P_{zz}^{-1}P_{zx}D^{-1}P_{xz}P_{zz}^{-1}\right)(z-\mu_z) - (z - \mu_z)^T P_{zz}^{-1} (z - \mu_z) $
+$ + (z-\mu_z)^T\left(P_{ZZ}^{-1} + P_{ZZ}^{-1}P_{ZX}D^{-1}P_{XZ}P_{ZZ}^{-1}\right)(z-\mu_z) - (z - \mu_z)^T P_{ZZ}^{-1} (z - \mu_z) $
 
-Cancel $(z - \mu_z)^T P_{zz}^{-1} (z - \mu_z)$ out.
+Cancel $(z - \mu_Z)^T P_{ZZ}^{-1} (z - \mu_Z)$ out.
 
-$ = (x - \mu_x)^T D^{-1} (x - \mu_x) - (x - \mu_x)^T D^{-1}P_{xz}P_{zz}^{-1} (z - \mu_z) - (z - \mu_z)^T P_{zz}^{-1}P_{zx}D^{-1}(x - \mu_x) $
+$ = (x - \mu_X)^T D^{-1} (x - \mu_X) - (x - \mu_X)^T D^{-1}P_{XZ}P_{ZZ}^{-1} (z - \mu_Z) - (z - \mu_Z)^T P_{ZZ}^{-1}P_{ZX}D^{-1}(x - \mu_X) $
 
-$ + (z-\mu_z)^T\left(P_{zz}^{-1}P_{zx}D^{-1}P_{xz}P_{zz}^{-1}\right)(z-\mu_z) $
+$ + (z-\mu_Z)^T\left(P_{ZZ}^{-1}P_{ZX}D^{-1}P_{XZ}P_{ZZ}^{-1}\right)(z-\mu_Z) $
 
-$ = \left[(x - \mu_x) - P_{xz}P_{zz}^{-1}(z-\mu_z) \right]^T D^{-1} \left[(x - \mu_x) - P_{xz}P_{zz}^{-1}(z-\mu_z) \right] $
+$ = \left[(x - \mu_X) - P_{XZ}P_{ZZ}^{-1}(z-\mu_Z) \right]^T D^{-1} \left[(x - \mu_X) - P_{XZ}P_{ZZ}^{-1}(z-\mu_Z) \right] $
 
-$ = \left[x - (\mu_x + P_{xz}P_{zz}^{-1}(z-\mu_z)) \right]^T D^{-1} \left[(x - (\mu_x + P_{xz}P_{zz}^{-1}(z-\mu_z)) \right] $
+$ = \left[x - (\mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z)) \right]^T D^{-1} \left[(x - (\mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z)) \right] $
 
-$ = \left[x - \mu_{x \mid z} \right]^T P_{x \mid z}^{-1} \left[(x - \mu_{x \mid z} \right] $
+$ = \left[x - \mu_{X \mid Z} \right]^T P_{X \mid Z}^{-1} \left[(x - \mu_{X \mid Z} \right] $
 
 Therefore
 
-\begin{align} \mu_{x \mid z} = \mu_x + P_{xz}P_{zz}^{-1}(z-\mu_z) \end{align}
+\begin{align} \mu_{X \mid Z} = \mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z) \end{align}
 
-\begin{align} P_{x \mid z} = D = P_{xx} - P_{xz}P_{zz}^{-1}P_{zx} \end{align}
+\begin{align} P_{X \mid Z} = D = P_{XX} - P_{XZ}P_{ZZ}^{-1}P_{ZX} \end{align}
