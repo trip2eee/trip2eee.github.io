@@ -44,7 +44,7 @@ $ = (x - \mu_x)^T D^{-1} (x - \mu_x) - (x - \mu_x)^T D^{-1}P_{xz}P_{zz}^{-1} (z 
 
 $ + (z-\mu_z)^T\left(P_{zz}^{-1} + P_{zz}^{-1}P_{zx}D^{-1}P_{xz}P_{zz}^{-1}\right)(z-\mu_z) - (z - \mu_z)^T P_{zz}^{-1} (z - \mu_z) $
 
-Cancele $(z - \mu_z)^T P_{zz}^{-1} (z - \mu_z)$ out.
+Cancel $(z - \mu_z)^T P_{zz}^{-1} (z - \mu_z)$ out.
 
 $ = (x - \mu_x)^T D^{-1} (x - \mu_x) - (x - \mu_x)^T D^{-1}P_{xz}P_{zz}^{-1} (z - \mu_z) - (z - \mu_z)^T P_{zz}^{-1}P_{zx}D^{-1}(x - \mu_x) $
 
