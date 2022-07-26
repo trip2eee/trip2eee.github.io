@@ -11,30 +11,30 @@ comments: true
 
 ## Mean and Variance of Gaussian random vector
 
-Let $x \sim \mathcal{N}\left(\mu_x, P_{xx}\right)$ and $z \sim \mathcal{N}\left(\mu_z, P_{zz}\right)$ are jointly normally distributed.
+Let $X \sim \mathcal{N}\left(\mu_x, P_{xx}\right)$ and $Z \sim \mathcal{N}\left(\mu_z, P_{zz}\right)$ are jointly normally distributed.
 
-\begin{align} y = \begin{bmatrix} x \\\\ z \end{bmatrix} \end{align}
+\begin{align} Y = \begin{bmatrix} X \\\\ Z \end{bmatrix} \end{align}
 
-\begin{align} P_{yy} = \begin{bmatrix} P_{xx} & P_{xz} \\\\ P_{zx} & P_{zz} \end{bmatrix} \label{eq_pyy}\end{align}
+\begin{align} P_{YY} = \begin{bmatrix} P_{XX} & P_{XZ} \\\\ P_{ZX} & P_{ZZ} \end{bmatrix} \label{eq_pyy}\end{align}
 
 
 Then the conditional pdf of $X$ can be given as follows
 
-\begin{align} p_{x \mid z} (x \mid z) = \frac{p_{xz}(x,z)}{p_z(z)} = \frac{p_y(y)}{p_z(z)} \end{align}
+\begin{align} p_{X \mid Z} (x \mid z) = \frac{p_{XZ}(x,z)}{p_Z(z)} = \frac{p_Y(y)}{p_Z(z)} \end{align}
 
-\begin{align} = \frac{p_{xz}(x,z)}{p_z(z)} = \frac{p_y(y)}{p_z(z)} \end{align}
+\begin{align} = \frac{p_{XZ}(x,z)}{p_Z(z)} = \frac{p_Y(y)}{p_Z(z)} \end{align}
 
-\begin{align} = \frac{\sqrt{(2\pi)^p detP_{zz}}}{\sqrt{(2\pi)^{n+p}det P_{yy}}} exp\left( -\frac{1}{2} \left\\{  (y-\mu_y)^T P_{yy}^{-1} (y-\mu_y) - (z-\mu_z)^T P_{zz}^{-1} (z-\mu_z) \right\\} \right) \label{eq_pxz}\end{align}
+\begin{align} = \frac{\sqrt{(2\pi)^p detP_{ZZ}}}{\sqrt{(2\pi)^{n+p}det P_{YY}}} exp\left( -\frac{1}{2} \left\\{  (y-\mu_y)^T P_{YY}^{-1} (y-\mu_y) - (z-\mu_z)^T P_{ZZ}^{-1} (z-\mu_z) \right\\} \right) \label{eq_pxz}\end{align}
 
-where $n$ and $p$ are dimensions of $z$ and $z$.
+where $n$ and $p$ are dimensions of $X$ and $Z$, respectively.
 
 Then the inverse of Eq.$\ref{eq_pyy}$ can also be expressed in the matrix form.
 
-\begin{align} P_{yy}^{-1} = \begin{bmatrix} D^{-1} & -D^{-1} P_{xz} P_{zz}^{-1} \\\\ -P_{zz}^{-1}P_{zx}D^{-1} & P_{zz}^{-1}+P_{zz}^{-1}P_{zx}D^{-1}P_{xz}P_{zz}^{-1} \end{bmatrix} \end{align}
+\begin{align} P_{YY}^{-1} = \begin{bmatrix} D^{-1} & -D^{-1} P_{XZ} P_{ZZ}^{-1} \\\\ -P_{ZZ}^{-1}P_{ZX}D^{-1} & P_{ZZ}^{-1}+P_{ZZ}^{-1}P_{ZX}D^{-1}P_{XZ}P_{ZZ}^{-1} \end{bmatrix} \end{align}
 
 where
 
-\begin{align}D = P_{xx} - P_{xz}P_{zz}^{-1}P_{zx} \end{align}
+\begin{align}D = P_{XX} - P_{XZ}P_{ZZ}^{-1}P_{ZX} \end{align}
 
 The equation in $\\{ \cdot \\}$ of Eq.$\ref{eq_pxz}$ can be simplified.
 
