@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Gaussian random vector"
+title: "MMSE Estimator"
 categories: "Tracking"
 tags: [KalmanFilter]
 use_math: true
 comments: true
 ---
 
-# Minimum Mean-Squared Error (MMSE) Estimator
+# MMSE Estimator
 
 ## Minimum Mean-Squared Error (MMSE) Estimator
 Minimum Mean-Squared Error (MMSE) estimator estimates $\hat{x}$ in such a way that mean squared-error is minimized.
@@ -21,8 +21,8 @@ $=E\left[X^T X\mid Z_k=z_k \right] - 2\hat{x}^TE\left[X\mid Z_k=z_k \right] + \h
 
 To find $\hat{x}$ such that minimizes $J$, differentiate $J$ with respect to $\hat{x}$.
 
-$$\frac{\partial J}{\partial \hat{x}} = -2E\left[X \mid Z_k=z_k\right] + 2\hat{x}$$
-$$\hat{x} = E\left[X \mid Z_k=z_k\right]$$
+$\frac{\partial J}{\partial \hat{x}} = -2E\left[X \mid Z_k=z_k\right] + 2\hat{x}
+\hat{x} = E\left[X \mid Z_k=z_k\right]$
 
 
 
@@ -34,12 +34,13 @@ $Z \sim \mathcal N\left(\mu_Z, P_{ZZ}\right)$
 
 $Y=\begin{bmatrix}X \\\\ Z\end{bmatrix} \sim \mathcal N\left(\mu_Y, P_{YY}\right)$
 
-$$p_{X \mid Z} = \frac{p_{XY}\left(x, z\right)}{p_Z\left(z\right)}=\frac{p_Y\left(y\right)}{p_Z\left(z\right)}$$
-$$=\frac{\sqrt{\left(2\pi\right)^p det P_{ZZ}}}{\sqrt{\left(2\pi\right)^{n+p} det P_{YY}}}exp\left(-\frac{1}{2} \left( \left(y - \mu_Y\right)^TP_{YY}^{-1}\left(y - \mu_Y\right)\right) + \left(z - \mu_Z\right)^TP_{ZZ}^{-1}\left(z - \mu_Z\right) \right)$$
+$p_{X \mid Z} = \frac{p_{XY}\left(x, z\right)}{p_Z\left(z\right)}=\frac{p_Y\left(y\right)}{p_Z\left(z\right)}$
 
-By the Eq.8 and Eq.9 in [Gaussian random vector](Gaussian-random-vector.html),
+$=\frac{\sqrt{\left(2\pi\right)^p det P_{ZZ}}}{\sqrt{\left(2\pi\right)^{n+p} det P_{YY}}}exp\left(-\frac{1}{2} \left( \left(y - \mu_Y\right)^TP_{YY}^{-1}\left(y - \mu_Y\right)\right) + \left(z - \mu_Z\right)^TP_{ZZ}^{-1}\left(z - \mu_Z\right) \right)$
 
-$$p_{X \mid Z}(x \mid z) = \frac{1}{\sqrt{\left(2\pi\right)^n det P_{XX \mid Z}}} exp\left(-\frac{1}{2} \left(x - E\left[X \mid Z=z\right]\right)^T P_{XX \mid Z}^{-1} \left(x - E\left[X \mid Z=z\right]\right) \right)$$
+By the Eq.8 and Eq.9 in [Gaussian random vector](https://trip2eee.github.io/tracking/2022/07/21/Gaussian-random-vector.html),
+
+$p_{X \mid Z}(x \mid z) = \frac{1}{\sqrt{\left(2\pi\right)^n det P_{XX \mid Z}}} exp\left(-\frac{1}{2} \left(x - E\left[X \mid Z=z\right]\right)^T P_{XX \mid Z}^{-1} \left(x - E\left[X \mid Z=z\right]\right) \right)$
 
 $E\left[X \mid Z=z \right] = \mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z)$
 
