@@ -21,8 +21,9 @@ $=E\left[X^T X\mid Z_k=z_k \right] - 2\hat{x}^TE\left[X\mid Z_k=z_k \right] + \h
 
 To find $\hat{x}$ such that minimizes $J$, differentiate $J$ with respect to $\hat{x}$.
 
-$\frac{\partial J}{\partial \hat{x}} = -2E\left[X \mid Z_k=z_k\right] + 2\hat{x}
-\hat{x} = E\left[X \mid Z_k=z_k\right]$
+$\frac{\partial J}{\partial \hat{x}} = -2E\left[X \mid Z_k=z_k\right] + 2\hat{x}$
+
+$\hat{x} = E\left[X \mid Z_k=z_k\right]$
 
 
 
