@@ -171,7 +171,7 @@ From Eq.$\ref{eq_interim4}$,
 
 ### Measurement Update
 
-By the Eq.8 and Eq.9 in [Gaussian random vector](Gaussian-random-vector.html), the expectations of the following pdfs are obtained.
+By the Eq.9 and Eq.10 in [Gaussian random vector](Gaussian-random-vector.html), the expectations of the following pdfs are obtained.
 
 \begin{align} \hat{x}(k \mid k) \equiv E\left[ x(k) \mid z(k), Z_{k-1}\right] = E\left[ x(k) \mid Z_k \right] \end{align}
 
