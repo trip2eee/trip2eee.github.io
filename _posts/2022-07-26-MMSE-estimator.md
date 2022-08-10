@@ -39,7 +39,7 @@ $p_{X \mid Z} = \frac{p_{XY}\left(x, z\right)}{p_Z\left(z\right)}=\frac{p_Y\left
 
 $=\frac{\sqrt{\left(2\pi\right)^p det P_{ZZ}}}{\sqrt{\left(2\pi\right)^{n+p} det P_{YY}}}exp\left(-\frac{1}{2} \left( \left(y - \mu_Y\right)^TP_{YY}^{-1}\left(y - \mu_Y\right) - \left(z - \mu_Z\right)^TP_{ZZ}^{-1}\left(z - \mu_Z\right)\right) \right)$
 
-By the Eq.8 and Eq.9 in [Gaussian random vector](https://trip2eee.github.io/tracking/2022/07/21/Gaussian-random-vector.html),
+By the Eq.9 and Eq.10 in [Gaussian random vector](https://trip2eee.github.io/tracking/2022/07/21/Gaussian-random-vector.html),
 
 $p_{X \mid Z}(x \mid z) = \frac{1}{\sqrt{\left(2\pi\right)^n det P_{XX \mid Z}}} exp\left(-\frac{1}{2} \left(x - E\left[X \mid Z=z\right]\right)^T P_{XX \mid Z}^{-1} \left(x - E\left[X \mid Z=z\right]\right) \right)$
 
