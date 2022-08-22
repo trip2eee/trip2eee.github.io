@@ -56,7 +56,7 @@ $ = \left[(x - \mu_X) - P_{XZ}P_{ZZ}^{-1}(z-\mu_Z) \right]^T D^{-1} \left[(x - \
 
 $ = \left[x - (\mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z)) \right]^T D^{-1} \left[(x - (\mu_X + P_{XZ}P_{ZZ}^{-1}(z-\mu_Z)) \right] $
 
-$ = \left[x - \mu_{X \mid Z} \right]^T P_{X \mid Z}^{-1} \left[(x - \mu_{X \mid Z} \right] $
+$ = \left[x - \mu_{X \mid Z} \right]^T P_{X \mid Z}^{-1} \left[x - \mu_{X \mid Z} \right] $
 
 Therefore
 
