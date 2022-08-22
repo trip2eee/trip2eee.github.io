@@ -37,7 +37,7 @@ $Y=\begin{bmatrix}X \\\\ Z\end{bmatrix} \sim \mathcal N\left(\mu_Y, P_{YY}\right
 
 $p_{X \mid Z} = \frac{p_{XZ}\left(x, z\right)}{p_Z\left(z\right)}=\frac{p_Y\left(y\right)}{p_Z\left(z\right)}$
 
-$=\frac{\sqrt{\left(2\pi\right)^p det P_{ZZ}}}{\sqrt{\left(2\pi\right)^{n+p} det P_{YY}}}exp\left(-\frac{1}{2} \left\{ \left(y - \mu_Y\right)^TP_{YY}^{-1}\left(y - \mu_Y\right) - \left(z - \mu_Z\right)^TP_{ZZ}^{-1}\left(z - \mu_Z\right)\right\} \right)$
+$=\frac{\sqrt{\left(2\pi\right)^p det P_{ZZ}}}{\sqrt{\left(2\pi\right)^{n+p} det P_{YY}}}exp\left(-\frac{1}{2} \left \{ \left(y - \mu_Y\right)^TP_{YY}^{-1}\left(y - \mu_Y\right) - \left(z - \mu_Z\right)^TP_{ZZ}^{-1}\left(z - \mu_Z\right)\right \} \right)$
 
 By the Eq.9 and Eq.10 in [Gaussian random vector](https://trip2eee.github.io/tracking/2022/07/21/Gaussian-random-vector.html),
 
