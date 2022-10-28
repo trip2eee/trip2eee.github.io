@@ -71,6 +71,39 @@ $f^{-1}: Y \rightarrow X$
 
 are continuous, then $f$ is called a homeomorphism.
 
+
+## The Fundamental Group
+### Homotopic
+If $f$ and $f'$ are continuous maps of the space $X$ into the space $Y$, we say that $f$ is homotopic to $f'$ if there is a continuous map $F: X \times I \rightarrow Y$ such that 
+
+$F(x, 0)=f(x)$ and $F(x,1)=f'(x)$
+
+for each $x$. Where $I=[0,1]$. The map $F$ is called a homotopy between $f$ and $f'$. If $f$ is homotopic to $f'$, we write $f \simeq f'$.
+
+### Nullhomotopic
+If $f \simeq f'$ and $f'$ is constant map, we say that $f$ is nullhomotopic.
+
+### initial point and final point
+If $f:[0,1] \rightarrow X$ is a continuous map such that $f(0) = x_0$ and $f(1) = x_1$, we say that $f$ is a path in $X$ from $x_0$ to $x_1$. We also say that $x_0$ is the initial point, and $x_1$ the final point of the path $f$.
+
+### Path homotopic
+Two paths $f$ and $f'$, mapping the interval $I = [0,1]$ into $X$, are said to be path homotopic if they have the same initial point $x_0$ and the same final point $x_1$, and if there is a continuous map $F:I \times I \rightarrow X$ such that
+
+$F(s,0) = f(s)$ and $F(s,1) = f'(s)$,
+
+$F(0,t) = x_0$ and $F(1,t) = x_1$,
+
+for each $s \in I$ and $t \in I$. We call $F$ a path homotopy between $f$ and $f'$ ($f \simeq_p f'$).
+
+### product
+If $f$ is a path in $X$ from $x_0$ to $x_1$, and if $g$ is a path in $X$ from $x_1$ and $x_2$, we define the product $h = f*g$ by the equations
+
+$$h(s) = 
+\begin{cases} 
+	f(2s) & \text{for } s \in \left[0, \frac{1}{2} \right] \\
+	g(2s-1) & \text{for } s \in \left[\frac{1}{2}, 1\right]
+\end{cases}$$
+
 # Reference
 [1] James Munkres, Topology Second Edition, Pearson(2014)
 
