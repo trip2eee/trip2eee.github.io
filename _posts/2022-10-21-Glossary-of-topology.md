@@ -107,6 +107,11 @@ h(s) =
 \end{align}
 $$
 
+#### The property of the operation *
+- Associativity: If $[f]\*([g]\*[h])$ is defined, so is $([f]\*[g])\*[h]$, and they are equal.
+- Right and left identities: Given $x \in X$, let $e_x$ denote the constant path $e_x:I \rightarrow X$ carrying all of $I$ to the point $x$. If $f$ is a path in $X$ from $x_0$ to $x_1$, then $[f]\*[e_{x_1}]=[f]$ and $[e_{x_0}]\*[f]=[f]$.
+- Inverse: Given the path $f$ in $X$ from $x_0$ to $x_1$, let $\bar{f}$ be the path defined by $\bar{f}(s)=f(1-s)$. It is called the reverse of $f$. Then $[f]\*[\bar{f}]=[e_{x_0}]$ and $[\bar{f}]\*[f]=[e_{x_1}]$.
+
 # Reference
 [1] James Munkres, Topology Second Edition, Pearson(2014)
 
