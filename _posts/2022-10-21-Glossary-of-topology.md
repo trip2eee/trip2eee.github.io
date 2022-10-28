@@ -97,8 +97,15 @@ for each $s \in I$ and $t \in I$. We call $F$ a path homotopy between $f$ and $f
 
 ### product
 If $f$ is a path in $X$ from $x_0$ to $x_1$, and if $g$ is a path in $X$ from $x_1$ and $x_2$, we define the product $h = f*g$ by the equations
-
-h(s) = \begin{cases} f(2s) & \text{for } s \in \left[0, \frac{1}{2}\right]\\g(2s-1) & \text{for } s \in \left[\frac{1}{2}, 1\right]\end{cases}
+$$
+\begin{align}
+h(s) = 
+\begin{cases} 
+	f(2s) & \text{for } s \in \left[0, \frac{1}{2}\right] \\
+	g(2s-1) & \text{for } s \in \left[\frac{1}{2}, 1\right]
+\end{cases}
+\end{align}
+$$
 
 # Reference
 [1] James Munkres, Topology Second Edition, Pearson(2014)
