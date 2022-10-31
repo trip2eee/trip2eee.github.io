@@ -12,9 +12,9 @@ comments: true
 ## Functions
 ### A function $f: A \rightarrow B$
 #### injective (one-to-one)
-For each pair of distinct point of A, their images under f are distinct.
+For each pair of distinct point of $A$, their images under $f$ are distinct.
 #### surjective (A onto B)
-Every element of B is the image of some element of A under the function f.
+Every element of $B$ is the image of some element of $A$ under the function $f$.
 #### bijective (one-to-one correspondence)
 $f$ is both injective and surjective
 
@@ -112,8 +112,48 @@ $$
 - Right and left identities: Given $x \in X$, let $e_x$ denote the constant path $e_x:I \rightarrow X$ carrying all of $I$ to the point $x$. If $f$ is a path in $X$ from $x_0$ to $x_1$, then $[f]\*[e_{x_1}]=[f]$ and $[e_{x_0}]\*[f]=[f]$.
 - Inverse: Given the path $f$ in $X$ from $x_0$ to $x_1$, let $\bar{f}$ be the path defined by $\bar{f}(s)=f(1-s)$. It is called the reverse of $f$. Then $[f]\*[\bar{f}]=[e_{x_0}]$ and $[\bar{f}]\*[f]=[e_{x_1}]$.
 
+#### positive linear map of $[a,b]$ to $[c,d]$
+If $[a,b]$ and $[c,d]$ are two intervals in $\mathbb{R}$, there is a unique map $p:[a,b] \rightarrow [c,d]$ that carries $a$ to $c$ and $b$ to $d$; we call it the positive linear map of $[a,b]$ to $[c,d]$.
+
+### The Fundamental Group
+Let's suppose we pick out a point $x_0$ of $X$ to serve as a "base point" and restrict ourselves to those paths that begin and end at $x_0$. The set of theese path-homotopy classes does form a group under *. It will be called the fundamental group of $X$.
+
+Let's suppose $G$ and $G'$ are groups. A homeomorphism $f: G\rightarrow G'$ is a map such that $f(x\cdot y)=f(x)\cdot f(y)$ for all $x$, $y$; it automatically satisfies the equations $f(e)=e'$ and $f\left(x^{-1}\right)=f^{-1}(x)$, where $e$ and $e'$ are the identies of $G$ and $G'$, respectively, and the exponent -1 denotes the inverse. The kernel of $f$ is thet set $f^{-1}\left(e'\right)$; it is a subgroup of $G$. The image of $f$, similarly, is a subgroup of $G'$. 
+- Monomorphism: The homomorphism of $f$ is injective. 
+- Epimorphism: The homomorphism of $f$ is surjective
+- Isomorphism: The homomorphism of $f$ is bijective.
+
+#### loop
+Let $X$ be a space; let $x_0$ be a point of $X$. A path in $X$ that begins and ends at $x_0$ is called a loop based at $x_0$. The set of path homotopy classes of loops based at $x_0$, with the operation *, is called the fundamental group of $X$ relative to the base point $x_0$. It is denoted by $\pi_1\left(X, x_0\right)$
+
+#### simply connected
+A space $X$ is said to be simply connected if it is a path-connected space and if $\pi_1\left(X,x_0\right)$ is the trivial (one-element) group for some $x_0 \in X$, and hence for every $x_0 in X$. We often express the fact that $\pi_1\left(X, x_0\right)$ is the trivial group by writing $\pi_1\left(X, x_0\right)=0$.
+
+#### homomorphism induced by $h$
+Let $h:(X,x_0) \rightarrow (Y,y_0)$ be a continuous map. Define
+
+$h_*:\pi_1(X,x_0) \rightarrow \pi_1(Y,y_0)$
+
+by the equation
+
+$h_*\left([f]\right) = [h \circ f]$
+
+The map $h_*$ is called the homomorphism induced by $h$, relative to the base poitn $x_0$.
+
+### Convering Spaces
+#### evenly covered
+Let $p:E\rightarrow B$ be a continuous surjective map. The open set $U$ and $B$ is said to be evenly covered by $p$ if the inverse image $p^{-1}(U)$  can be written as the union of disjoint open sts $V_\alpha$ in $E$ such that for each $\alpha$, the restriction of $p$ to $V_\alpha$ is a homeomorphism of $V_\alpha$ onto $U$. The collection $\{V_\alpha\}$ will be called a partition of $p^{-1}(U)$ into slices.
+
+#### coveringmap and coveringspace
+Let $p: E \rightarrow B$ be continuous and surjective. If every point $b$ of $B$ has a neighborhood $U$ that is evenly covered by $p$, then $p$ is called coveringmap, and $E$ is said to be a converingspace of $B$.
+
+## The Seifert-van Kampen Theorem
+### Abelian Groups
+In mathematics, an abelian group, also called a commutative group, is a group in which the result of applying the group operation to two group elements does not depend on the order in which they are written. That is, the group operation is commutative.
+
 # Reference
 [1] James Munkres, Topology Second Edition, Pearson(2014)
 
 [2] https://en.wikipedia.org/wiki/Glossary_of_topology
 
+[3] https://en.wikipedia.org/wiki/Abelian_group
