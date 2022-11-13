@@ -179,6 +179,16 @@ Let $p: E \rightarrow B$ be continuous and surjective. If every point $b$ of $B$
 ### Abelian Groups
 In mathematics, an abelian group, also called a commutative group, is a group in which the result of applying the group operation to two group elements does not depend on the order in which they are written. That is, the group operation is commutative.
 
+
+## Classification of Surfaces
+### Polygonal region in the plane
+Given a point $c$ of $\mathbb{R}^2$, and given $a>0$, consider the circle of radius $a$ in $\mathbb{R}^2$ with center at $c$. Given a finite sequence $\theta_0 < \theta_1 < \dots < \theta_n$ of real numbers, when $n \geq 3$ and $\theta_n = \theta_0 + 2\pi$, consider the points $p_i = c + a\left(cos\theta_i + sin\theta_i\right)$, which lie on this circle. They are numbered in counterclockwise order around the circle, and $p_n = p_0$. The line through $p_{i-1}$ and $p_i$ splits the plane into two closed half-planes; let $H_i$ be the on that contains all the points $p_k$. Then the space $P = H_1 \cap \dots \cap H_n$ is called the polygnoal region determined by the points $p_i$.
+
+- The points $p_i$ : vertices of $P$;
+- An edge of $P$ : the line segment joining $p_{i-1}$ and $p_i$ are called
+- Bd$P$ : the union of the edges of $P$ is denoted 
+- $P$ - Bd$P$: Int $P$.
+
 # Reference
 [1] James Munkres, Topology Second Edition, Pearson(2014)
 
